@@ -14,6 +14,12 @@
 		116396982770A537004AE2C4 /* Time_Visualizer__Charts_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 116396962770A537004AE2C4 /* Time_Visualizer__Charts_.xcdatamodeld */; };
 		1163969A2770A53D004AE2C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116396992770A53D004AE2C4 /* Assets.xcassets */; };
 		1163969D2770A53D004AE2C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1163969B2770A53D004AE2C4 /* LaunchScreen.storyboard */; };
+		116396A52770C7F1004AE2C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116396A42770C7F1004AE2C4 /* TableViewCell.swift */; };
+		116396B82771044F004AE2C4 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116396B62771044F004AE2C4 /* Task+CoreDataClass.swift */; };
+		116396B92771044F004AE2C4 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116396B72771044F004AE2C4 /* Task+CoreDataProperties.swift */; };
+		116396BE277118EE004AE2C4 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116396BD277118EE004AE2C4 /* ChartViewController.swift */; };
+		116396C127712077004AE2C4 /* WeaklyTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116396BF27712077004AE2C4 /* WeaklyTask+CoreDataClass.swift */; };
+		116396C227712077004AE2C4 /* WeaklyTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116396C027712077004AE2C4 /* WeaklyTask+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		116396992770A53D004AE2C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1163969C2770A53D004AE2C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1163969E2770A53D004AE2C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		116396A42770C7F1004AE2C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		116396B62771044F004AE2C4 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		116396B72771044F004AE2C4 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		116396BD277118EE004AE2C4 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		116396BF27712077004AE2C4 /* WeaklyTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeaklyTask+CoreDataClass.swift"; sourceTree = "<group>"; };
+		116396C027712077004AE2C4 /* WeaklyTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeaklyTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +54,10 @@
 		116396812770A537004AE2C4 = {
 			isa = PBXGroup;
 			children = (
+				116396BF27712077004AE2C4 /* WeaklyTask+CoreDataClass.swift */,
+				116396C027712077004AE2C4 /* WeaklyTask+CoreDataProperties.swift */,
+				116396B62771044F004AE2C4 /* Task+CoreDataClass.swift */,
+				116396B72771044F004AE2C4 /* Task+CoreDataProperties.swift */,
 				1163968C2770A537004AE2C4 /* Time Visualizer (Charts) */,
 				1163968B2770A537004AE2C4 /* Products */,
 			);
@@ -66,6 +82,8 @@
 				1163969B2770A53D004AE2C4 /* LaunchScreen.storyboard */,
 				1163969E2770A53D004AE2C4 /* Info.plist */,
 				116396962770A537004AE2C4 /* Time_Visualizer__Charts_.xcdatamodeld */,
+				116396A42770C7F1004AE2C4 /* TableViewCell.swift */,
+				116396BD277118EE004AE2C4 /* ChartViewController.swift */,
 			);
 			path = "Time Visualizer (Charts)";
 			sourceTree = "<group>";
@@ -86,6 +104,8 @@
 			dependencies = (
 			);
 			name = "Time Visualizer (Charts)";
+			packageProductDependencies = (
+			);
 			productName = "Time Visualizer (Charts)";
 			productReference = 1163968A2770A537004AE2C4 /* Time Visualizer (Charts).app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +134,8 @@
 				Base,
 			);
 			mainGroup = 116396812770A537004AE2C4;
+			packageReferences = (
+			);
 			productRefGroup = 1163968B2770A537004AE2C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,10 +163,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116396A52770C7F1004AE2C4 /* TableViewCell.swift in Sources */,
 				116396922770A537004AE2C4 /* ViewController.swift in Sources */,
 				1163968E2770A537004AE2C4 /* AppDelegate.swift in Sources */,
 				116396902770A537004AE2C4 /* SceneDelegate.swift in Sources */,
+				116396B92771044F004AE2C4 /* Task+CoreDataProperties.swift in Sources */,
+				116396BE277118EE004AE2C4 /* ChartViewController.swift in Sources */,
+				116396C127712077004AE2C4 /* WeaklyTask+CoreDataClass.swift in Sources */,
+				116396B82771044F004AE2C4 /* Task+CoreDataClass.swift in Sources */,
 				116396982770A537004AE2C4 /* Time_Visualizer__Charts_.xcdatamodeld in Sources */,
+				116396C227712077004AE2C4 /* WeaklyTask+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
