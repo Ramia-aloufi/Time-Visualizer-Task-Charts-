@@ -104,8 +104,6 @@
 			dependencies = (
 			);
 			name = "Time Visualizer (Charts)";
-			packageProductDependencies = (
-			);
 			productName = "Time Visualizer (Charts)";
 			productReference = 1163968A2770A537004AE2C4 /* Time Visualizer (Charts).app */;
 			productType = "com.apple.product-type.application";
@@ -134,8 +132,6 @@
 				Base,
 			);
 			mainGroup = 116396812770A537004AE2C4;
-			packageReferences = (
-			);
 			productRefGroup = 1163968B2770A537004AE2C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -251,10 +247,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -305,10 +303,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};

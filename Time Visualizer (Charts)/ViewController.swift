@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UITableViewController {
     var hour = [String]()
     
@@ -36,32 +37,31 @@ class ViewController: UITableViewController {
         for i in 0...23{
             hour.append("\(i):00")
             task.append("")
-            
         }
-        
+        row = hour
          read()
-         row = hour
-
-       // print(dailyTask[2].id)
         
     }
     
     
-    @IBAction func changeTime(_ sender: UIBarButtonItem) {
-        let sement = sender as! UISegmentedControl
-        print(sement.selectedSegmentIndex)
-        if sender.tag == 0{
+    
+    
+    @IBAction func timeChange(_ sender: UISegmentedControl) {
+
+        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 0{
             dayActive = !dayActive
-          row = hour
+            row = hour
             read()
           
         }else{
-            dayActive = !dayActive
+          dayActive = !dayActive
           row = dayes
           readweak()
         }
-        
     }
+    
+ 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -85,7 +85,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath) as! TableViewCell
         cell.label.text = row[indexPath.row]
-        cell.label.textColor = .lightGray
+        cell.label.textColor = .darkGray
         cell.taskTF.text = task[indexPath.row]
         cell.taskTF.tag = indexPath.row
         cell.taskTF.addTarget(self, action: #selector(textFieldDidChange(_ :)), for: .editingDidEnd)
@@ -100,6 +100,7 @@ class ViewController: UITableViewController {
     @objc func textFieldDidChange(_ TextField:UITextField) {
         let holla = TextField.text!
         print("change",holla,TextField.tag)
+        print(dayActive)
         if dayActive{
         create(title: holla, int: TextField.tag)
         }else{
@@ -117,6 +118,7 @@ class ViewController: UITableViewController {
 
 extension ViewController{
     
+    
     func create(title:String,int:Int){
         let taskItem = Task(context: context) // important
         taskItem.dailyTask = title
@@ -133,6 +135,9 @@ extension ViewController{
     func read(){
         do {
             dailyTask = try context.fetch(Task.fetchRequest())
+            for i in row.indices{
+                task[i] = ""
+            }
             for i in dailyTask{
                 if !i.dailyTask!.isEmpty{
                  task[Int(i.id)] = i.dailyTask!
@@ -152,8 +157,8 @@ extension ViewController{
         taskItem.id = Double(int)
             do {
                 try context.save()
-                print("create() Success")
-                read()
+                print("createweak() Success")
+               readweak()
             } catch {
                 print("\(error)")
         }
@@ -162,14 +167,18 @@ extension ViewController{
     func readweak(){
         do {
             weaklyTask = try context.fetch(WeaklyTask.fetchRequest())
-            for i in dailyTask{
-                if !i.dailyTask!.isEmpty{
-                 task[Int(i.id)] = i.dailyTask!
+            
+            for i in row.indices{
+                task[i] = ""
+            }
+            for i in weaklyTask{
+                if !i.task!.isEmpty{
+                    task[Int(i.id)] = i.task!
                 }}
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            print("getTask() Success")
+            print("readweak() Success")
         } catch {
             print(error.localizedDescription)
         }
