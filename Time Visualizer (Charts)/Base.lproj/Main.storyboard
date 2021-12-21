@@ -67,11 +67,11 @@
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="sXU-WV-tqG">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="80E-Sd-CC6">
-                                <rect key="frame" x="141.5" y="6" width="131" height="32"/>
+                                <rect key="frame" x="263" y="6" width="131" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Daily"/>
+                                    <segment title="Weakly"/>
                                 </segments>
                                 <connections>
                                     <action selector="timeChange:" destination="9oO-K2-JnG" eventType="valueChanged" id="dOK-8x-c2q"/>

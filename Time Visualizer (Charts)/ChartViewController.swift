@@ -7,12 +7,30 @@
 //
 
 import UIKit
+import Charts
 
-class ChartViewController: UIViewController {
+class ChartViewController: UIViewController,ChartViewDelegate {
 
+    var pieChart = PieChartView()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        view.backgroundColor = .black
+        pieChart.delegate = self
+        pieChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height / 2)
+        pieChart.center = view.center
+        view.addSubview(pieChart)
+        
+        var entries = [ChartDataEntry]()
+        for x in 0..<23{
+            entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
+            let set = PieChartDataSet(entries: entries)
+            set.colors = ChartColorTemplates.liberty()
+            let data = PieChartData(dataSet: set)
+            pieChart.data = data
+        }
+        
         navigationController?.navigationBar.isHidden = true
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_ :)))
         gesture.direction = .right
